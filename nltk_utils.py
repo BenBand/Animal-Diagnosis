@@ -29,4 +29,10 @@ def bag_of_words(tokenized_sentence, all_words):
         if w in tokenized_sentence:
             bag[idx] = 1.0
 
-        return bag
+    return bag
+
+# Bag of words example
+""" sentence = ['hello', 'how', 'are', 'you']
+words = ['hi', 'hello', 'I', 'you', 'bye', 'thanks', 'cool']
+bag = bag_of_words(sentence, words)
+print(bag) """
