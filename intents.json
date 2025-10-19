@@ -8,7 +8,8 @@
         "How are you",
         "Is anyone there?",
         "Hello",
-        "Good day"
+        "Good day",
+        "Ben?"
       ],
       "responses": [
         "Hey :-)",
@@ -19,7 +20,7 @@
     },
     {
       "tag": "goodbye",
-      "patterns": ["Bye", "See you later", "Goodbye"],
+      "patterns": ["Bye","See you later", "Goodbye"],
       "responses": [
         "See you later, thanks for visiting",
         "Have a nice day",
@@ -32,28 +33,64 @@
       "responses": ["Happy to help!", "Any time!", "My pleasure"]
     },
     {
-      "tag": "items",
+      "tag": "animal",
       "patterns": [
-        "Which items do you have?",
-        "What kinds of items are there?",
-        "What do you sell?"
+        "I want to ask you about domestic pigs?",
+        "What animal assistance do you offer today?"
       ],
       "responses": [
-        "We sell coffee and tea",
-        "We have coffee and tea"
+        "Of course! Feel free to ask any questions you want, whether it's about their behavior, care, breeds, or anything else",
+        "Yes you can, I'm here to help!"
       ]
     },
     {
-      "tag": "payments",
+      "tag": "understand",
       "patterns": [
-        "Do you take credit cards?",
-        "Do you accept Mastercard?",
-        "Can I pay with Paypal?",
-        "Are you cash only?"
+        "Okey",
+        "Now i understand",
+        "Now i get it?",
+        "If you say so",
+        "I understand",
+        "I will ask you later maybe",
+        "I will ask you later i guess"
       ],
       "responses": [
-        "We accept VISA, Mastercard and Paypal",
-        "We accept most major credit cards, and Paypal"
+        "Thats great, do you still need more assistance?",
+        "Do you still need more assistance?",
+        "Thats great :)",
+        "Glad to help"
+      ]
+    },
+    {
+      "tag": "no",
+      "patterns": [
+        "No its Okey",
+        "No am fine",
+        "No",
+        "No am good",
+        "No understand",
+        "That was clear",
+        "That was satisfying"
+      ],
+      "responses": [
+        "Thats great",
+        "I will be glad to assist if you need me"
+      ]
+    },
+    {
+      "tag": "question",
+      "patterns": [
+        "I want to ask you a question?",
+        "I have a qustion",
+        "Can i ask you a question?",
+        "Let me ask you a question?",
+        "Can i ask you something?",
+        "Let me ask you something?"
+      ],
+      "responses": [
+        "yes go ahead...",
+        "Oh ya! i love questions",
+        "Let's get right into it"
       ]
     },
     {
@@ -69,16 +106,783 @@
       ]
     },
     {
-      "tag": "funny",
-      "patterns": [
-        "Tell me a joke!",
-        "Tell me something funny!",
-        "Do you know a joke?"
-      ],
-      "responses": [
-        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
-        "What did the buffalo say when his son left for college? Bison."
-      ]
-    }
-  ]
+    "tag": "pigs",
+    "patterns": [
+      "How do I care for pigs?",
+      "What should I feed my pigs?",
+      "Signs of illness in pigs?",
+      "How to vaccinate pigs?"
+    ],
+    "responses": [
+      "Pigs need a balanced diet of grains, vegetables, and protein sources. Make sure they have access to clean water.",
+      "Common signs of illness in pigs include a lack of appetite, coughing, and abnormal behavior. Monitor them closely.",
+      "Vaccination for pigs typically includes vaccines for diseases like Porcine Reproductive and Respiratory Syndrome (PRRS). Consult your vet for a vaccination schedule."
+    ]
+  },
+  {
+    "tag": "cows",
+    "patterns": [
+      "What do cows eat?",
+      "How to detect diseases in cows?",
+      "Vaccination schedule for cows?",
+      "How do I care for a calf?"
+    ],
+    "responses": [
+      "Cows primarily eat grass, hay, and grains. Ensure they have access to minerals and vitamins as well.",
+      "Signs of disease in cows can include coughing, decreased milk production, and changes in behavior. Always check for fever.",
+      "Cows should be vaccinated against diseases like Bovine Viral Diarrhea (BVD) and Clostridial diseases. Consult with your veterinarian for a specific schedule.",
+      "Calves require special care, including colostrum intake within the first few hours of life and a balanced diet as they grow."
+    ]
+  },
+  {
+    "tag": "sheep",
+    "patterns": [
+      "How do I care for sheep?",
+      "Common diseases in sheep?",
+      "How to vaccinate sheep?",
+      "What do sheep eat?"
+    ],
+    "responses": [
+      "Sheep require a diet rich in fiber, such as hay and pasture. Make sure they have access to clean water.",
+      "Common diseases include Foot and Mouth Disease and Sheep Scab. Look out for lameness and weight loss.",
+      "Vaccination for sheep may include vaccines for Bluetongue and Clostridial diseases. It's best to discuss this with your veterinarian.",
+      "Proper care involves regular shearing, hoof trimming, and parasite control."
+    ]
+  },
+  {
+    "tag": "goats",
+    "patterns": [
+      "What should I feed my goats?",
+      "Signs of illness in goats?",
+      "How to vaccinate goats?",
+      "How do I care for baby goats?"
+    ],
+    "responses": [
+      "Goats thrive on a diet of hay, grains, and fresh vegetables. Ensure they have access to minerals.",
+      "Look for signs like a lack of energy, coughing, and unusual behavior in goats. Regular health checks are essential.",
+      "Goats should be vaccinated against diseases like Clostridium perfringens and Caprine Arthritis Encephalitis (CAE). Check with your vet for the best practices.",
+      "Baby goats (kids) need colostrum within the first few hours of life and should be kept warm and dry."
+    ]
+  },
+  {
+    "tag": "general",
+    "patterns": [
+      "How often should I check my livestock for diseases?",
+      "What are the common vaccinations for livestock?",
+      "How to prevent diseases in livestock?",
+      "What are the signs of dehydration in livestock?"
+    ],
+    "responses": [
+      "It's best to check your livestock daily for any signs of illness or distress. Regular health checks are crucial.",
+      "Common vaccinations include those for Bovine Respiratory Disease, Porcine Reproductive and Respiratory Syndrome, and Clostridial diseases.",
+      "Preventive measures include proper nutrition, clean living conditions, and regular veterinary care.",
+      "Signs of dehydration include dry mouth, lethargy, and decreased skin elasticity. Always ensure your animals have access to fresh water."
+    ]
+  },
+  {
+    "tag": "pigs_illnesses",
+    "patterns": [
+      "What are common illnesses in pigs?",
+      "How do I treat PRRS in pigs?",
+      "Signs of swine influenza?",
+      "What to do for erysipelas in pigs?"
+    ],
+    "responses": [
+      "Common illnesses in pigs include Porcine Reproductive and Respiratory Syndrome (PRRS), swine influenza, and erysipelas.",
+      "To treat PRRS, vaccination is key. Consult your vet for specific medications and management strategies.",
+      "Signs of swine influenza include coughing, nasal discharge, and lethargy. If observed, consult a veterinarian.",
+      "Erysipelas can be treated with antibiotics like oxytetracycline. Vaccination can help prevent it."
+    ]
+  },
+  {
+    "tag": "cows_illnesses",
+    "patterns": [
+      "What diseases affect cows?",
+      "How to treat bovine respiratory disease?",
+      "Symptoms of mastitis in cows?",
+      "What vaccination is needed for BVD?"
+    ],
+    "responses": [
+      "Cows commonly suffer from bovine respiratory disease (BRD), mastitis, and bovine viral diarrhea (BVD).",
+      "BRD is treated with antibiotics and supportive care. Vaccination is also crucial for prevention.",
+      "Symptoms of mastitis include swelling, heat, and redness in the udder, along with decreased milk production.",
+      "Vaccination against BVD is essential. Consult your vet for the best vaccination schedule."
+    ]
+  },
+  {
+    "tag": "sheep_illnesses",
+    "patterns": [
+      "What are common sheep diseases?",
+      "How to treat foot rot in sheep?",
+      "Signs of scrapie?",
+      "How to prevent enterotoxemia?"
+    ],
+    "responses": [
+      "Common diseases in sheep include foot rot, scrapie, and enterotoxemia.",
+      "Foot rot can be treated with antibiotics and proper hoof care. Consult a vet for severe cases.",
+      "Signs of scrapie include behavioral changes and difficulty walking. It's crucial to report suspected cases.",
+      "Prevent enterotoxemia with proper vaccination and management of diet changes."
+    ]
+  },
+  {
+    "tag": "goats_illnesses",
+    "patterns": [
+      "What illnesses affect goats?",
+      "How to treat CAE?",
+      "Symptoms of coccidiosis in goats?",
+      "What should I do for pneumonia in goats?"
+    ],
+    "responses": [
+      "Goats can suffer from Caprine Arthritis Encephalitis (CAE), coccidiosis, and pneumonia.",
+      "CAE has no cure, but supportive care can help manage symptoms. Consult your vet for advice.",
+      "Symptoms of coccidiosis in goats include diarrhea, bloating, and weight loss. Antiprotozoals are often used for treatment.",
+      "Pneumonia is treated with antibiotics like oxytetracycline. Early intervention is key."
+    ]
+  },
+  {
+    "tag": "general_illnesses",
+    "patterns": [
+      "How often should I check my livestock for illnesses?",
+      "What vaccines are common for livestock?",
+      "How to recognize dehydration in livestock?",
+      "What should I do if my animal is sick?"
+    ],
+    "responses": [
+      "It's best to check your livestock daily for any signs of illness. Regular health checks are crucial.",
+      "Common vaccines include those for Bovine Respiratory Disease, PRRS for pigs, and clostridial diseases for sheep and goats.",
+      "Signs of dehydration include dry mouth, lethargy, and decreased skin elasticity. Ensure access to fresh water.",
+      "If your animal is sick, consult a veterinarian for diagnosis and treatment options."
+    ]
+  },
+  {
+    "tag": "newborn_pigs",
+    "patterns": [
+      "How do I care for newborn pigs?",
+      "What should I feed piglets?",
+      "Signs of illness in newborn pigs?",
+      "How to prevent disease in piglets?"
+    ],
+    "responses": [
+      "Newborn pigs should be kept warm and dry. Ensure they receive colostrum within the first few hours of life.",
+      "Piglets should be fed a high-quality milk replacer or sow's milk. Gradually introduce solid food after a few days.",
+      "Signs of illness in newborn pigs include lethargy, poor feeding, and abnormal vocalizations. Monitor them closely.",
+      "To prevent disease, ensure proper hygiene, provide vaccinations, and keep them in a stress-free environment."
+    ]
+  },
+  {
+    "tag": "newborn_cows",
+    "patterns": [
+      "How to care for a newborn calf?",
+      "What is the best diet for calves?",
+      "Signs of disease in young calves?",
+      "How to prevent scours in calves?"
+    ],
+    "responses": [
+      "Newborn calves should receive colostrum within the first 2 hours of life to boost immunity.",
+      "Calves should be fed high-quality milk replacer or whole milk, transitioning to grain and forage as they grow.",
+      "Signs of disease in young calves include diarrhea, dehydration, and lack of appetite. Seek veterinary care if these occur.",
+      "Prevent scours by maintaining hygiene, ensuring proper nutrition, and keeping calves dry and warm."
+    ]
+  },
+  {
+    "tag": "newborn_sheep",
+    "patterns": [
+      "How do I care for newborn lambs?",
+      "What should I feed young lambs?",
+      "Signs of illness in lambs?",
+      "How to prevent pneumonia in lambs?"
+    ],
+    "responses": [
+      "Newborn lambs should receive colostrum from the ewe within the first hour after birth.",
+      "Young lambs can be fed a high-quality milk replacer, transitioning to solid feed as they grow.",
+      "Signs of illness in lambs include coughing, lethargy, and poor growth. Regular health checks are essential.",
+      "To prevent pneumonia, keep lambs warm, dry, and ensure they are not overcrowded."
+    ]
+  },
+  {
+    "tag": "newborn_goats",
+    "patterns": [
+      "How to care for newborn kids?",
+      "What do young goats eat?",
+      "Signs of illness in kids?",
+      "How to prevent diseases in young goats?"
+    ],
+    "responses": [
+      "Newborn kids should receive colostrum within the first few hours of life to ensure proper immunity.",
+      "Young goats can be fed a high-quality milk replacer, gradually introducing solid feed as they age.",
+      "Signs of illness in kids include weakness, lack of appetite, and diarrhea. Monitor their health closely.",
+      "To prevent diseases, maintain a clean environment, ensure proper nutrition, and consult your vet for vaccinations."
+    ]
+  },
+  {
+    "tag": "general_young_livestock",
+    "patterns": [
+      "How often should I check young livestock for health issues?",
+      "What are the signs of undernutrition in young animals?",
+      "How to ensure proper growth in newborn livestock?",
+      "What vaccinations do young livestock need?"
+    ],
+    "responses": [
+      "Young livestock should be checked daily for any signs of health issues or distress.",
+      "Signs of undernutrition include poor weight gain, lethargy, and rough coat. Ensure a balanced diet.",
+      "To ensure proper growth, provide a balanced diet rich in nutrients, clean water, and a stress-free environment.",
+      "Consult your vet for recommended vaccinations based on the species and local health regulations."
+    ]
+  },
+  {
+    "tag": "feeding_newborn_pigs",
+    "patterns": [
+      "When can I start feeding piglets?",
+      "What should I feed newborn pigs?",
+      "How to ensure proper growth in piglets?",
+      "What food is best for young pigs?"
+    ],
+    "responses": [
+      "Piglets should start receiving colostrum within the first few hours of birth, transitioning to a high-quality milk replacer by day 3.",
+      "Newborn pigs should ideally be fed colostrum from the sow, followed by a milk replacer until they are about 3 weeks old.",
+      "To ensure proper growth, provide piglets with a balanced diet that includes milk replacer and high-quality starter feed after two weeks.",
+      "Young pigs thrive on a diet of milk replacer initially, then transition to a starter feed that is high in protein and energy."
+    ]
+  },
+  {
+    "tag": "feeding_newborn_cows",
+    "patterns": [
+      "When should I start feeding calves?",
+      "What do newborn calves eat?",
+      "How to ensure calves grow healthy?",
+      "Best food for young calves?"
+    ],
+    "responses": [
+      "Calves should receive colostrum within the first 2 hours of life, followed by milk or milk replacer starting at 3 days old.",
+      "Newborn calves should be fed colostrum from the mother for optimal immunity, then moved to milk replacer or whole milk.",
+      "To ensure healthy growth, introduce high-quality starter grain and hay around 2-3 weeks of age.",
+      "Young calves benefit from a diet of milk replacer initially, transitioning to grain and hay as they mature."
+    ]
+  },
+  {
+    "tag": "feeding_newborn_sheep",
+    "patterns": [
+      "When can lambs start eating solid food?",
+      "What should I feed newborn lambs?",
+      "How to ensure lambs grow healthy?",
+      "Best food for young lambs?"
+    ],
+    "responses": [
+      "Lambs should receive colostrum within the first hour after birth and can start eating solid food around 1-2 weeks old.",
+      "Newborn lambs should be fed colostrum from the ewe to boost their immunity, then gradually introduced to a milk replacer if necessary.",
+      "To ensure proper growth, provide lambs with high-quality starter feed and fresh hay starting at about 1-2 weeks of age.",
+      "Young lambs thrive on a diet of colostrum initially, transitioning to solid feeds that are high in nutrients by 2-3 weeks."
+    ]
+  },
+  {
+    "tag": "feeding_newborn_goats",
+    "patterns": [
+      "When can kids start eating solid food?",
+      "What should I feed newborn goats?",
+      "How to ensure kids grow healthy?",
+      "Best food for young goats?"
+    ],
+    "responses": [
+      "Kids should receive colostrum within the first few hours of birth and can start eating solid food at around 1-2 weeks old.",
+      "Newborn goats should ideally be fed colostrum from the mother or a milk replacer to ensure they get necessary nutrients.",
+      "To ensure healthy growth, introduce high-quality starter grain and hay when kids are about 1-2 weeks old.",
+      "Young goats benefit from a diet of colostrum initially, transitioning to solid feeds rich in protein and energy as they grow."
+    ]
+  },
+  {
+    "tag": "general_feeding_young_livestock",
+    "patterns": [
+      "How often should I feed young livestock?",
+      "What are the signs of proper nutrition in young animals?",
+      "How to monitor the growth of newborn livestock?",
+      "What supplements do young animals need?"
+    ],
+    "responses": [
+      "Young livestock should be fed multiple times a day, especially in the early weeks of life, to ensure consistent nutrition.",
+      "Signs of proper nutrition include steady weight gain, active behavior, and healthy coat condition.",
+      "Monitor growth by regularly weighing young animals and checking for signs of good health and vitality.",
+      "Consult your veterinarian for recommendations on supplements, as young animals may need additional vitamins and minerals depending on their diet."
+    ]
+  },
+  {
+    "tag": "healthy_pigs",
+    "patterns": [
+      "What is the ideal weight for healthy pigs?",
+      "How tall should a healthy pig be?",
+      "What skin color indicates a healthy pig?",
+      "Signs of unhealthy pigs?"
+    ],
+    "responses": [
+      "Healthy pigs typically weigh between 200 to 300 pounds, depending on their age and breed.",
+      "The ideal height for a healthy pig is around 24 to 30 inches at the shoulder.",
+      "A healthy pig usually has smooth, shiny skin that is not pale and shows no signs of lesions.",
+      "Signs of unhealthy pigs include weight loss, rough coat, pale skin, and lethargy. Monitor their eating habits closely."
+    ]
+  },
+  {
+    "tag": "healthy_cows",
+    "patterns": [
+      "What is the ideal weight for healthy cows?",
+      "How tall should a healthy cow be?",
+      "What skin color indicates a healthy cow?",
+      "Signs of unhealthy cows?"
+    ],
+    "responses": [
+      "Healthy cows should weigh between 1,000 to 1,800 pounds, depending on their breed and age.",
+      "The average height for a healthy cow is around 50 to 60 inches at the shoulder.",
+      "Healthy cows generally have smooth skin that is not pale, with a good amount of fat covering their ribs.",
+      "Signs of unhealthy cows include drastic weight loss, dull coat, pale skin, and reduced milk production."
+    ]
+  },
+  {
+    "tag": "healthy_sheep",
+    "patterns": [
+      "What is the ideal weight for healthy sheep?",
+      "How tall should a healthy sheep be?",
+      "What skin color indicates a healthy sheep?",
+      "Signs of unhealthy sheep?"
+    ],
+    "responses": [
+      "Healthy sheep typically weigh between 100 to 300 pounds, depending on the breed and age.",
+      "The ideal height for a healthy sheep ranges from 20 to 30 inches at the shoulder.",
+      "Healthy sheep should have clean, smooth skin that is not pale and shows no signs of irritation.",
+      "Signs of unhealthy sheep include weight loss, rough wool, pale skin, and behavioral changes."
+    ]
+  },
+  {
+    "tag": "healthy_goats",
+    "patterns": [
+      "What is the ideal weight for healthy goats?",
+      "How tall should a healthy goat be?",
+      "What skin color indicates a healthy goat?",
+      "Signs of unhealthy goats?"
+    ],
+    "responses": [
+      "Healthy goats usually weigh between 50 to 300 pounds, depending on the breed and age.",
+      "The average height for a healthy goat is around 20 to 30 inches at the shoulder.",
+      "Healthy goats have smooth, shiny skin that is not pale and free from parasites.",
+      "Signs of unhealthy goats include weight loss, dull coat, pale skin, and excessive scratching or rubbing."
+    ]
+  },
+  {
+    "tag": "general_health_indicators",
+    "patterns": [
+      "How to assess the health of livestock?",
+      "What are the key indicators of healthy livestock?",
+      "How to identify unhealthy livestock?",
+      "What role does skin color play in livestock health?"
+    ],
+    "responses": [
+      "To assess the health of livestock, monitor their weight, height, coat condition, and overall behavior.",
+      "Key indicators of healthy livestock include a proper weight range, smooth skin, shiny coats, and active behavior.",
+      "Unhealthy livestock may show signs such as weight loss, dullness in coat, pale skin, and lethargy.",
+      "Skin color should be vibrant and smooth; pale or dry skin can indicate underlying health issues."
+    ]
+  },
+  {
+    "tag": "livestock_housing",
+    "patterns": [
+      "What is the best housing for pigs?",
+      "How much space do cows need?",
+      "What type of shelter is best for sheep?",
+      "How to design a goat pen?"
+    ],
+    "responses": [
+      "Pigs need a well-ventilated space that is clean and dry, with enough room to move comfortably. A space of at least 8 square feet per pig is recommended.",
+      "Cows require a minimum of 100 square feet per animal in a barn or shelter to ensure their comfort and well-being.",
+      "Sheep should have a clean, dry shelter that protects them from harsh weather. A well-ventilated barn or shed works best.",
+      "A goat pen should provide at least 15-25 square feet per goat, with secure fencing to prevent escape and shelter from weather."
+    ]
+  },
+  {
+    "tag": "livestock_breeding",
+    "patterns": [
+      "How often can pigs breed?",
+      "What is the gestation period for cows?",
+      "When do sheep reach sexual maturity?",
+      "How to breed goats effectively?"
+    ],
+    "responses": [
+      "Pigs can breed as often as every 6 months, but it's best to allow time for recovery between litters.",
+      "The gestation period for cows is about 9 months, similar to humans.",
+      "Sheep typically reach sexual maturity around 5-12 months, depending on the breed.",
+      "To breed goats effectively, ensure they are healthy, monitor their heat cycles, and provide proper nutrition before and during pregnancy."
+    ]
+  },
+  {
+    "tag": "livestock_healthcare",
+    "patterns": [
+      "How often should I vaccinate my livestock?",
+      "What are common parasites in livestock?",
+      "How to treat common ailments in goats?",
+      "What is the best way to deworm sheep?"
+    ],
+    "responses": [
+      "Vaccination schedules vary by species and local regulations, but typically animals should be vaccinated annually or biannually.",
+      "Common parasites include worms, ticks, and lice. Regular health checks can help identify and treat infestations.",
+      "Common ailments in goats include mastitis and foot rot. Consult your vet for appropriate treatments.",
+      "Deworming sheep can be done every 6-8 weeks, depending on the level of infestation and local conditions. Use a vet-recommended dewormer."
+    ]
+  },
+  {
+    "tag": "livestock_nutrition",
+    "patterns": [
+      "What supplements do livestock need?",
+      "How to balance the diet for dairy cows?",
+      "What is the best feed for finishing pigs?",
+      "How to ensure proper nutrition for goats?"
+    ],
+    "responses": [
+      "Common supplements include minerals, vitamins, and probiotics to support overall health. Consult a vet for specific needs.",
+      "Dairy cows need a balanced diet of forage, grains, and protein supplements to maintain milk production and health.",
+      "For finishing pigs, a high-energy diet with adequate protein is essential, often including corn and soybean meal.",
+      "To ensure proper nutrition for goats, provide a balanced diet that includes hay, grains, and access to minerals and fresh water."
+    ]
+  },
+  {
+    "tag": "livestock_management",
+    "patterns": [
+      "How to manage livestock in winter?",
+      "What are the best practices for handling livestock?",
+      "How to monitor livestock health effectively?",
+      "What is rotational grazing?"
+    ],
+    "responses": [
+      "In winter, ensure livestock have adequate shelter, bedding, and access to fresh water that is not frozen.",
+      "Best practices include gentle handling, ensuring calm environments, and using appropriate equipment to minimize stress.",
+      "Monitor livestock health by observing behavior, checking for signs of illness, and conducting regular weigh-ins.",
+      "Rotational grazing involves moving livestock between pastures to prevent overgrazing and promote pasture health."
+    ]
+  },
+  {
+    "tag": "livestock_farming_basics",
+    "patterns": [
+      "What is livestock farming?",
+      "How to start a livestock farm?",
+      "What types of livestock can I raise?",
+      "What are the benefits of livestock farming?"
+    ],
+    "responses": [
+      "Livestock farming involves raising animals for food, fiber, and other products. It includes cattle, sheep, pigs, goats, and poultry.",
+      "To start a livestock farm, research your local regulations, choose the type of livestock, and create a business plan that includes budget and resources.",
+      "You can raise various types of livestock, including cattle, sheep, goats, pigs, chickens, and ducks, depending on your goals and resources.",
+      "Benefits of livestock farming include providing food, generating income, contributing to local economies, and promoting sustainable practices."
+    ]
+  },
+  {
+    "tag": "livestock_management",
+    "patterns": [
+      "How to manage a livestock farm?",
+      "What are the best practices for livestock care?",
+      "How to handle livestock safely?",
+      "What is integrated livestock farming?"
+    ],
+    "responses": [
+      "Effective livestock management involves regular health checks, proper feeding, maintaining clean environments, and ensuring adequate shelter.",
+      "Best practices for livestock care include providing proper nutrition, regular veterinary care, and safe handling techniques to minimize stress.",
+      "To handle livestock safely, approach them calmly, use appropriate equipment, and avoid sudden movements that could startle the animals.",
+      "Integrated livestock farming combines crops and livestock to create a more sustainable system, where byproducts from one can benefit the other."
+    ]
+  },
+  {
+    "tag": "livestock_nutrition",
+    "patterns": [
+      "What do livestock eat?",
+      "How to balance livestock diets?",
+      "What are the nutritional needs of cattle?",
+      "How to feed pigs effectively?"
+    ],
+    "responses": [
+      "Livestock diets typically consist of forages, grains, protein sources, and minerals. The specific diet depends on the type of animal and its life stage.",
+      "Balancing livestock diets involves ensuring the right proportions of carbohydrates, proteins, vitamins, and minerals based on their production goals.",
+      "Cattle need a diet high in fiber, usually provided through forages like hay and pasture, along with grains and supplements for energy.",
+      "Pigs should be fed a balanced diet that includes grains, protein sources, and vitamins, adjusted according to their growth stage."
+    ]
+  },
+  {
+    "tag": "livestock_health",
+    "patterns": [
+      "How to keep livestock healthy?",
+      "What are common diseases in livestock?",
+      "How often should livestock be vaccinated?",
+      "What are the signs of illness in livestock?"
+    ],
+    "responses": [
+      "To keep livestock healthy, provide proper nutrition, clean housing, regular veterinary care, and monitor their health closely.",
+      "Common diseases include mastitis in cows, foot rot in sheep, and respiratory diseases in pigs. Regular health checks can help identify these issues.",
+      "Vaccination schedules vary by species, but most livestock should be vaccinated annually or biannually to prevent common diseases.",
+      "Signs of illness in livestock include lethargy, loss of appetite, changes in behavior, and visible symptoms like coughing or limping."
+    ]
+  },
+  {
+    "tag": "livestock_economics",
+    "patterns": [
+      "What are the costs of starting a livestock farm?",
+      "How to calculate profit in livestock farming?",
+      "What grants are available for livestock farmers?",
+      "How to market livestock products?"
+    ],
+    "responses": [
+      "Starting a livestock farm involves costs like purchasing animals, feed, equipment, and facilities. Create a detailed budget to estimate expenses.",
+      "To calculate profit, subtract your total costs from your total income from livestock sales and related products.",
+      "Many governments and organizations offer grants and subsidies for livestock farmers to support sustainable practices and expansion.",
+      "Market livestock products through local farmers' markets, online platforms, or through partnerships with local grocery stores and restaurants."
+    ]
+  },
+  {
+    "tag": "goat_farming",
+    "patterns": [
+      "What are the best breeds of goats for farming?",
+      "How to care for goats?",
+      "What do goats eat?",
+      "How to manage a goat farm?"
+    ],
+    "responses": [
+      "Some popular breeds for farming include Boer, Saanen, Nubian, and Alpine goats, known for their meat, milk, or fiber.",
+      "To care for goats, provide clean water, balanced nutrition, shelter from harsh weather, and regular veterinary check-ups.",
+      "Goats are browsers and thrive on a diet of hay, pasture, grains, and minerals. They also enjoy shrubs and bushes.",
+      "Managing a goat farm involves regular health monitoring, proper feeding, maintaining clean living conditions, and safe handling practices."
+    ]
+  },
+  {
+    "tag": "sheep_farming",
+    "patterns": [
+      "What are the best sheep breeds for farming?",
+      "How to care for sheep?",
+      "What do sheep eat?",
+      "How to manage a sheep farm?"
+    ],
+    "responses": [
+      "Popular sheep breeds for farming include Merino, Suffolk, Dorper, and Hampshire, valued for their wool, meat, or milk.",
+      "To care for sheep, provide adequate shelter, clean water, balanced nutrition, and regular health checks, including vaccinations.",
+      "Sheep primarily eat grass, hay, and grains, along with minerals and vitamins to ensure proper health and growth.",
+      "Managing a sheep farm requires monitoring health, providing proper nutrition, maintaining pastures, and ensuring shearing is done regularly."
+    ]
+  },
+  {
+    "tag": "cow_farming",
+    "patterns": [
+      "What are the best breeds of cows for farming?",
+      "How to care for dairy cows?",
+      "What do beef cattle eat?",
+      "How to manage a cattle farm?"
+    ],
+    "responses": [
+      "Popular dairy breeds include Holstein, Jersey, and Guernsey, while Angus, Hereford, and Charolais are favored for beef production.",
+      "To care for dairy cows, provide a balanced diet rich in nutrients, clean water, and regular milking and health checks.",
+      "Beef cattle primarily eat grass, hay, and grains, with a focus on high-energy feed for optimal growth.",
+      "Managing a cattle farm involves monitoring health, ensuring proper nutrition, maintaining pastures, and implementing a breeding program."
+    ]
+  },
+  {
+    "tag": "pig_farming",
+    "patterns": [
+      "What are the best breeds of pigs for farming?",
+      "How to care for pigs?",
+      "What do pigs eat?",
+      "How to manage a pig farm?"
+    ],
+    "responses": [
+      "Popular pig breeds for farming include Yorkshire, Duroc, Berkshire, and Landrace, known for their meat quality and growth rates.",
+      "To care for pigs, provide clean housing, clean water, a balanced diet, and regular health checks to prevent diseases.",
+      "Pigs eat a diet primarily consisting of grains, protein sources, and vegetables, along with access to minerals and vitamins.",
+      "Managing a pig farm involves monitoring health, ensuring proper feeding, maintaining clean living conditions, and practicing biosecurity measures."
+    ]
+  },
+  {
+    "tag": "buying_goat_medication",
+    "patterns": [
+      "Where can I buy medication for goats?",
+      "What medications do goats need?",
+      "How to choose the right medication for goats?",
+      "Are there any over-the-counter medicines for goats?"
+    ],
+    "responses": [
+      "You can buy medication for goats at local farm supply stores, veterinary clinics, or online pet and livestock pharmacies.",
+      "Common medications for goats include dewormers, antibiotics, and vaccines. Consult a veterinarian for specific recommendations.",
+      "When choosing medication for goats, consider their age, health condition, and any advice from your veterinarian.",
+      "Yes, there are over-the-counter medications available for goats, such as dewormers and some vaccines. Always follow dosage instructions."
+    ]
+  },
+  {
+    "tag": "buying_sheep_medication",
+    "patterns": [
+      "Where can I purchase medication for sheep?",
+      "What are the common medications for sheep?",
+      "How to select the right medication for sheep?",
+      "Are there any natural remedies for sheep?"
+    ],
+    "responses": [
+      "Medication for sheep can be purchased at agricultural supply stores, veterinary clinics, or online livestock health suppliers.",
+      "Common medications for sheep include dewormers, vaccines, and treatments for infections. Always consult a vet for specific needs.",
+      "Select medication for sheep based on their specific health issues, age, and the advice of your veterinarian.",
+      "Some natural remedies for sheep include herbal supplements and essential oils, but consult with a vet before use to ensure safety."
+    ]
+  },
+  {
+    "tag": "buying_cow_medication",
+    "patterns": [
+      "Where can I find medication for cows?",
+      "What medications do dairy cows need?",
+      "How to choose the right medication for beef cattle?",
+      "Are there any safe over-the-counter medicines for cows?"
+    ],
+    "responses": [
+      "You can find medication for cows at local veterinary clinics, farm supply stores, or online livestock pharmacies.",
+      "Dairy cows often need medications like antibiotics, dewormers, and vaccines to maintain health and milk production.",
+      "Choosing medication for cows should be based on their specific health conditions and age, as well as veterinary advice.",
+      "Yes, there are over-the-counter medications for cows, including some dewormers and vitamins. Always check labels for proper usage."
+    ]
+  },
+  {
+    "tag": "buying_pig_medication",
+    "patterns": [
+      "Where can I buy medication for pigs?",
+      "What are the common medications for pigs?",
+      "How to select the right medication for piglets?",
+      "Are there any home remedies for pigs?"
+    ],
+    "responses": [
+      "Medication for pigs can be purchased at livestock supply stores, veterinary clinics, or online animal health retailers.",
+      "Common medications for pigs include antibiotics, dewormers, and vaccinations. Consult a vet for appropriate treatments.",
+      "Select medication for pigs based on their age, health condition, and veterinary recommendations to ensure safety and effectiveness.",
+      "Some home remedies for pigs include natural supplements, but always consult with a veterinarian before trying alternative treatments."
+    ]
+  },
+  {
+    "tag": "goat_basics",
+    "patterns": [
+      "What are the characteristics of goats?",
+      "How do goats behave?",
+      "What is the lifespan of a goat?",
+      "What are common uses for goats?"
+    ],
+    "responses": [
+      "Goats are known for their curiosity, intelligence, and agility. They have a unique digestive system that allows them to thrive on a variety of plants.",
+      "Goats are social animals that often display playful behavior. They enjoy interacting with their herd and can be quite vocal.",
+      "The average lifespan of a goat is around 10 to 15 years, depending on the breed and care they receive.",
+      "Common uses for goats include milk production, meat (chevon), fiber (like cashmere and mohair), and land management through grazing."
+    ]
+  },
+  {
+    "tag": "sheep_basics",
+    "patterns": [
+      "What are the characteristics of sheep?",
+      "How do sheep behave?",
+      "What is the lifespan of a sheep?",
+      "What are common uses for sheep?"
+    ],
+    "responses": [
+      "Sheep are known for their flocking behavior and strong social bonds. They have a woolly coat, which is essential for insulation.",
+      "Sheep are generally docile and calm animals. They communicate through bleating and often follow a leader in their flock.",
+      "The average lifespan of a sheep is about 10 to 12 years, but some can live longer with proper care.",
+      "Common uses for sheep include wool production, meat (lamb or mutton), and milk (for cheese and yogurt)."
+    ]
+  },
+  {
+    "tag": "cow_basics",
+    "patterns": [
+      "What are the characteristics of cows?",
+      "How do cows behave?",
+      "What is the lifespan of a cow?",
+      "What are common uses for cows?"
+    ],
+    "responses": [
+      "Cows are large, social mammals known for their gentle nature. They have a complex digestive system with a four-chambered stomach.",
+      "Cows are social animals that form strong bonds with their herd. They communicate through vocalizations and body language.",
+      "The average lifespan of a cow is around 15 to 20 years, depending on the breed and management practices.",
+      "Common uses for cows include milk production (dairy cows), meat (beef cattle), and leather production."
+    ]
+  },
+  {
+    "tag": "pig_basics",
+    "patterns": [
+      "What are the characteristics of pigs?",
+      "How do pigs behave?",
+      "What is the lifespan of a pig?",
+      "What are common uses for pigs?"
+    ],
+    "responses": [
+      "Pigs are intelligent, social animals known for their curiosity and problem-solving abilities. They have a unique snout that helps them forage.",
+      "Pigs are very social and can become quite playful. They communicate through grunting and squealing and enjoy interaction with humans and other pigs.",
+      "The average lifespan of a pig is around 10 to 15 years, though some breeds can live longer with proper care.",
+      "Common uses for pigs include meat production (pork), leather, and in some cultures, they are raised for truffle hunting."
+    ]
+  },
+  {
+    "tag": "livestock_farming_introduction",
+    "patterns": [
+      "What is livestock farming?",
+      "Why is livestock farming important?",
+      "What are the basic principles of livestock farming?",
+      "How is livestock farming different from crop farming?"
+    ],
+    "responses": [
+      "Livestock farming involves raising animals for food, fiber, and other products. It includes cattle, sheep, goats, pigs, and poultry.",
+      "Livestock farming is important for food production, economic stability, and providing livelihoods. It also supports agricultural diversity.",
+      "Basic principles of livestock farming include proper animal husbandry, nutrition, health care, and sustainable farming practices.",
+      "Livestock farming focuses on raising animals, while crop farming involves growing plants. Both can be integrated for better land use."
+    ]
+  },
+  {
+    "tag": "livestock_farming_breeds",
+    "patterns": [
+      "What are the best breeds for livestock farming?",
+      "How do I choose the right breed for my farm?",
+      "What factors should I consider when selecting livestock breeds?",
+      "What are dual-purpose breeds?"
+    ],
+    "responses": [
+      "The best breeds depend on your farming goals, such as meat, milk, or fiber production. Popular breeds include Angus for beef and Saanen for dairy.",
+      "Consider factors like climate, market demand, and your farm's resources when choosing the right breed for your livestock.",
+      "Factors to consider include the breed's growth rate, disease resistance, feed efficiency, and adaptability to your environment.",
+      "Dual-purpose breeds are those raised for both meat and milk, like the Jersey cow or the Dorset sheep, providing versatility for farmers."
+    ]
+  },
+  {
+    "tag": "livestock_farming_nutrition",
+    "patterns": [
+      "What do livestock animals eat?",
+      "How to balance livestock diets?",
+      "What are the nutritional needs of different livestock?",
+      "How to formulate a feed plan for livestock?"
+    ],
+    "responses": [
+      "Livestock diets typically consist of forages, grains, protein sources, and vitamins. Specific diets vary by species and production goals.",
+      "Balancing livestock diets involves providing the right amounts of carbohydrates, proteins, vitamins, and minerals suitable for their life stages.",
+      "Nutritional needs vary among livestock; for example, dairy cows require high-energy feeds, while goats need more roughage for digestion.",
+      "To formulate a feed plan, assess the nutritional requirements based on the livestock type, age, and production stage, and adjust as needed."
+    ]
+  },
+  {
+    "tag": "livestock_farming_health",
+    "patterns": [
+      "How to keep livestock healthy?",
+      "What are common health issues in livestock?",
+      "How often should livestock be vaccinated?",
+      "What are the signs of illness in livestock?"
+    ],
+    "responses": [
+      "To keep livestock healthy, provide proper nutrition, clean living conditions, regular veterinary care, and monitor their health closely.",
+      "Common health issues include respiratory infections, parasites, and metabolic disorders. Regular health checks can help identify these problems.",
+      "Vaccination schedules vary by species, but many livestock should be vaccinated annually or biannually to prevent diseases.",
+      "Signs of illness in livestock include lethargy, decreased appetite, coughing, abnormal behavior, and visible symptoms like limping or swelling."
+    ]
+  },
+  {
+    "tag": "livestock_farming_management",
+    "patterns": [
+      "How to manage a livestock farm effectively?",
+      "What are the best practices for livestock farming?",
+      "How to keep records for livestock farming?",
+      "What are the challenges in livestock farming?"
+    ],
+    "responses": [
+      "Effective management includes regular health monitoring, proper feeding, maintaining clean environments, and ensuring safe handling of animals.",
+      "Best practices involve implementing biosecurity measures, rotating pastures, and providing adequate shelter and water for livestock.",
+      "Keeping records involves tracking breeding, health treatments, feeding schedules, and financial performance to make informed management decisions.",
+      "Challenges in livestock farming include disease outbreaks, fluctuating market prices, feed costs, and changing regulations."
+    ]
+  }
+]
 }
