@@ -1,52 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
 <head>
     <meta charset="UTF-8">
-    <title>Chatbot</title>
-      <!---------------------- QuickSand fonts --------------------->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bena - Smart Livestock Assistant</title>
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-    <!---------------------- QuickSand fonts --------------------->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-     <!--------------- Main content ---------------->
-    <div class="main-content-holder">
-        <h1>WELCOME TO FARMCHAT<br></h1>
-        <h2 class="">SUPPORT</h2>
-    </div>
-    <!--------------- Main content ---------------->
+    <!-- Main Layout -->
+    <div class="main-container">
+        
+        <!-- Left Sidebar - History -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>Bena</span>
+                </div>
+                <button class="close-sidebar" id="closeSidebar" aria-label="Close sidebar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="sidebar-content">
+                <div class="history-section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-history"></i> Chat History</h3>
+                        <button id="clearHistory" class="clear-btn" title="Clear History">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+                    <div class="history-list" id="historyList">
+                        <!-- History items will be loaded here -->
+                        <div class="empty-state">
+                            <i class="fas fa-comments"></i>
+                            <p>No chat history yet</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="topics-section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-tags"></i> Quick Topics</h3>
+                    </div>
+                    <div class="topic-buttons">
+                        <button class="topic-btn" data-topic="cattle">
+                            <i class="fas fa-cow"></i> Cattle
+                        </button>
+                        <button class="topic-btn" data-topic="poultry">
+                            <i class="fas fa-egg"></i> Poultry
+                        </button>
+                        <button class="topic-btn" data-topic="sheep">
+                            <i class="fas fa-animal"></i> Sheep
+                        </button>
+                        <button class="topic-btn" data-topic="goats">
+                            <i class="fas fa-goat"></i> Goats
+                        </button>
+                        <button class="topic-btn" data-topic="disease">
+                            <i class="fas fa-stethoscope"></i> Disease
+                        </button>
+                        <button class="topic-btn" data-topic="feed">
+                            <i class="fas fa-wheat"></i> Nutrition
+                        </button>
+                        <button class="topic-btn" data-topic="fish">
+                            <i class="fas fa-fish"></i> Fish
+                        </button>
+                        <button class="topic-btn" data-topic="crops">
+                            <i class="fas fa-seedling"></i> Crops
+                        </button>
+                        <button class="topic-btn" data-topic="zambia">
+                            <i class="fas fa-map-marker-alt"></i> Zambia
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="weather-widget" id="weatherWidget">
+                    <div class="section-header">
+                        <h3><i class="fas fa-cloud-sun"></i> Weather</h3>
+                    </div>
+                    <div class="weather-info">
+                        <div class="weather-loading">Loading weather...</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <div class="api-status">
+                    <span class="status-dot" id="statusDot"></span>
+                    <span id="statusText">AI Ready</span>
+                </div>
+            </div>
+        </aside>
 
-<div class="container">
-    <div class="chatbox">
-        <div class="chatbox__support">
-            <div class="chatbox__header">
-                <div class="chatbox__image--header">
-                    <img src="../static/images/5f63cc585cd87.webp" alt="image">
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="main-header">
+                <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="header-title">
+                    <h1><i class="fas fa-leaf"></i> Bena Assistant</h1>
+                    <p>Your smart farming companion</p>
                 </div>
-                <div class="chatbox__content--header">
-                    <p class="chatbox__description--header">Hi. My name is Ben. How can I help you?</p>
+                <div class="header-actions">
+                    <div class="question-counter" id="questionCounter" title="Questions remaining">
+                        <i class="fas fa-question-circle"></i>
+                        <span id="questionCountText">3</span>/3
+                    </div>
+                    <button class="refresh-btn" id="refreshBtn" title="New Chat">
+                        <i class="fas fa-plus"></i>
+                    </button>
                 </div>
-            </div>
-            <div class="chatbox__messages">
-                <div></div>
-            </div>
-            <div class="chatbox__footer">
-                <input type="text" placeholder="Write a message...">
-                <button class="chatbox__send--footer send__button">Send</button>
-            </div>
-        </div>
-        <div class="chatbox__button">
-            <button><img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /></button>
-        </div>
+            </header>
+
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h2>Welcome to Bena 🐄</h2>
+                    <p>Ask me anything about livestock, farming, disease prevention, market prices, or weather advice.</p>
+                    
+                    <div class="quick-questions">
+                        <button class="quick-btn" data-question="What do cows eat?">
+                            <i class="fas fa-grass"></i> Cattle Feeding
+                        </button>
+                        <button class="quick-btn" data-question="How to prevent disease in chickens?">
+                            <i class="fas fa-biohazard"></i> Poultry Health
+                        </button>
+                        <button class="quick-btn" data-question="What are current market prices?">
+                            <i class="fas fa-chart-line"></i> Market Prices
+                        </button>
+                        <button class="quick-btn" data-question="How to start goat farming?">
+                            <i class="fas fa-hand-sparkles"></i> Goat Farming
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="{{ url_for('static', filename='images/cow-header-image-1.jpg') }}" alt="Farm">
+                </div>
+            </section>
+
+            <!-- Chat Interface -->
+            <section class="chat-section">
+                <div class="chat-container">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="welcome-message">
+                            <div class="bot-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message-content">
+                                <p>Hello! I'm <strong>Bena</strong>, your smart farming assistant. 🐄</p>
+                                <p>Ask me about:</p>
+                                <ul>
+                                    <li>Cattle, poultry, sheep, and goats</li>
+                                    <li>Animal nutrition and feeding</li>
+                                    <li>Disease prevention and treatment</li>
+                                    <li>Weather and climate advice</li>
+                                    <li>Market prices and costs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input-area">
+                        <div class="input-wrapper">
+                            <input type="text" id="chatInput" placeholder="Type your farming question here..." autocomplete="off">
+                            <button class="send-btn" id="sendBtn" aria-label="Send message">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Info Cards -->
+            <section class="info-section">
+                <div class="info-card">
+                    <div class="card-icon"><i class="fas fa-cow"></i></div>
+                    <h3>Cattle</h3>
+                    <p>Dairy, beef, breeding & care</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon"><i class="fas fa-egg"></i></div>
+                    <h3>Poultry</h3>
+                    <p>Chickens, eggs & health</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon"><i class="fas fa-fish"></i></div>
+                    <h3>Fish</h3>
+                    <p>Tilapia, catfish & ponds</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon"><i class="fas fa-seedling"></i></div>
+                    <h3>Crops</h3>
+                    <p>Maize, vegetables & more</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon"><i class="fas fa-stethoscope"></i></div>
+                    <h3>Disease</h3>
+                    <p>Prevention & treatment</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon"><i class="fas fa-cloud-sun"></i></div>
+                    <h3>Weather</h3>
+                    <p>Farm planning tips</p>
+                </div>
+            </section>
+        </main>
     </div>
-</div>
 
     <script>
-        $SCRIPT_ROOT = {{ request.script_root|tojson }};
+        // Flask URL for API calls
+        window.SCRIPT_ROOT = "";
     </script>
     <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
 
